@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
+<html lang="en" dir="ltr" ng-app="EventsApp">
 
 <head>
   <meta charset="utf-8">
-  <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> -->
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
   <link rel="stylesheet" href="../css/EventsPage.css">
 
@@ -45,14 +45,14 @@
   </div>
 
   <!-- Cards for Events -->
-  <div class="container">
+  <div class="container" ng-controller="EventController">
     <div class="row">
       <div class="col">
-        <div class="card text-center" style="width: 288px;">
+        <div class="card text-center" style="width: 288px;" ng-repeat="card in event.events">
           <div class="card-body">
-            <h5 class="card-title">Event 1</h5>
-            <p class="card-text">Description of Event</p>
-            <p class="card-text"><small class="text-muted">Last updated Now</small></p>
+            <h5 class="card-title">{{card.name}}</h5>
+            <p class="card-text">{{card.description}}</p>
+            <p class="card-text"><small class="text-muted">{{card.time}}</small></p>
             <a href="#" class="btn btn-primary">View Event</a>
           </div>
         </div>
@@ -74,12 +74,19 @@
             <a href="#" class="btn btn-primary">View Event</a>
           </div>
         </div>
-      </div>
+
+      </div> <!-- End of col -->
 
       <!-- Event Overview section -->
       <div class="col">
         <div class="event-overview">
-
+          <center>
+            <h3>{{event.name}}</h3>
+            <p>{{event.description}}</p>
+            <h6>{{event.location}}</h6>
+            <footer>{{event.time}}</footer>
+            {{event.image}}
+          </center>
         </div>
       </div>
     </div>
