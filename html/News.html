@@ -1,15 +1,58 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
+<style>
+html,
+body {
+  height: 100%;
+  margin: 0
+}
 
+.box {
+  display: flex;
+  flex-flow: column;
+  height: 100%;
+}
+
+.box .row {
+  border: 1px dotted grey;
+}
+
+.box .row.header {
+  flex: 0 1 auto;
+  /* The above is shorthand for:
+  flex-grow: 0,
+  flex-shrink: 1,
+  flex-basis: auto
+  */
+}
+
+.hover-news:hover{
+	background-color: #0C2340;
+	color: white;
+}
+
+.box .row.content {
+  flex: 1 1 auto;
+}
+
+.box .row.footer {
+  flex: 0 1 80px;
+}
+
+.form-border{
+  border: 1px solid rgb(221, 221, 221);
+}
+</style>
 <head>
   <meta charset="utf-8">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
   <link rel="stylesheet" href="../css/News.css">
-
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
   <title>Computing Club</title>
 </head>
 
-<body>
+<body ng-app="MainApp" ng-controller="NewsController">
   <!-- Banner at top of page -->
   <div class="banner">
     <img src="../images/ComputingClubBanner.jpg" alt="Banner">
@@ -42,6 +85,54 @@
       </div>
     </nav>
   </div>
+  <div class="box" style="background-image: url('../images/wallpaper_2.jpg')">
+    <div class="container">
+        <div class="card col-md-4 hover-news" style=" display: inline-flex !important;" ng-repeat="news in news | orderBy: 'timestamp'">
+            <img height="250px" width="100%;" class="card-img-top" src="{{news.img}}" alt="Card image cap">
+            <div class="card-body">
+              <div class="form-border"></div>
+              <h5 class="card-title">{{news.title}}</h5>
+              <div class="form-border"></div>
+              <p class="card-text">{{news.info}}</p>
+              <button class="btn btn-primary" href="{{news.link}}">Learn More</button>
+              <p class="card-text"><small class="text-muted">Last updated {{news.timestamp}}</small></p>
+            </div>
+        </div>
+      </div>
+
+    </div>
+    <footer style="background-color: rgb(20, 59, 107); color: white;">
+        <div class="row">
+         <div class="col-md-4">        
+     
+         </div>
+         <div class="col-md-4">        
+           <h6 class="display-6" style="text-align: center; font-size: 16px;">Site Powered by Crescent Cool Cats</h6>
+         </div>
+         <div class="col-md-4">        
+           <label style="text-align: center;">Contact us:</label>
+           <ul style="list-style: none; cursor: pointer; display: inline !important;">
+             <li> <a style="text-decoration: none;"><i class="fab fa-facebook right"></i> Facebook</a></li>
+             <li> <a style="text-decoration: none;"><i class="fas fa-address-book right"></i> Address</a></li>
+             <li> <a style="text-decoration: none;"><i class="fas fa-phone-square right"></i> Phone number</a></li>
+           </ul>
+         </div>
+       </div>
+     </footer>
+     <script>
+        var MainApp = angular.module('MainApp', []);
+        MainApp.controller('NewsController', ['$scope', function($scope) {
+          $scope.news = [
+            {"title": "News 1", "info":"information about news here :)", "link":"testing.com", "img":"../images/news/news_1.jpg", "timestamp":"10/1/2018"},
+            {"title": "News 2", "info":"information about news here :)", "link":"testing.com", "img":"../images/news/news_2.jpg", "timestamp":"11/1/2018"},
+            {"title": "News 3", "info":"information about news here :)", "link":"testing.com", "img":"../images/news/news_3.jpg", "timestamp":"12/1/2018"},
+            {"title": "News 4", "info":"information about news here :)", "link":"testing.com", "img":"../images/news/news_4.jpg", "timestamp":"1/1/2019"},
+            {"title": "News 5", "info":"information about news here :)", "link":"testing.com", "img":"../images/news/news_5.jpg", "timestamp":"2/1/2019"},
+            {"title": "News 6", "info":"information about news here :)", "link":"testing.com", "img":"../images/news/news_6.jpg", "timestamp":"3/1/2019"}
+          ];
+
+        }]);
+     </script>
 </body>
 
 </html>
