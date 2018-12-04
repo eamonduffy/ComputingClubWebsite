@@ -35,13 +35,93 @@
           <li class="nav-item">
             <a class="nav-link" href="Apply.html">Apply for Membership</a>
           </li>
-          <li class="nav-item active">
-            <a class="nav-link" href="#">Admin Login</a>
-          </li>
         </ul>
       </div>
     </nav>
+  </div> <!-- End Nav Bar -->
+
+  <!-- Container of all cards -->
+  <div class="container">
+    <div class="row">
+      <!-- Card for adding Events -->
+      <div class="col card-padding-1">
+        <div class="card">
+          <div class="card-header">
+            Add Event
+          </div>
+          <div class="card-body">
+            <form action="/action_page.php">
+              <h6 class="card-title">Event Name</h6>
+              <input type="text" class="form-control" name="eventname" placeholder="Event Name">
+              <br>
+              <h6 class="card-title">Description</h6>
+              <input type="text" class="form-control" name="eventdescription" placeholder="Event Description">
+              <br>
+              <h6 class="card-title">Location</h6>
+              <input type="text" class="form-control" name="eventlocation" placeholder="Event Location">
+              <br>
+              <h6 class="card-title">Image</h6>
+              <input type="file" name="pic" accept="image/*">
+              <input type="submit" name="newevent" class="btn btn-primary">
+            </form>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card for adding news -->
+      <div class="col card-padding-1">
+        <div class="card">
+          <div class="card-header">
+            Add News
+          </div>
+          <div class="card-body">
+            <form action="/action_page.php">
+              <h6 class="card-title">Title</h6>
+              <input type="text" class="form-control" name="title" placeholder="Name of News">
+              <br>
+              <h6 class="card-title">Description</h6>
+              <input type="text" class="form-control" name="newsdescription" placeholder="News Description">
+              <br>
+              <h6 class="card-title">Author</h6>
+              <input type="text" class="form-control" name="author" placeholder="Name of Author">
+              <br>
+              <h6 class="card-title">Image</h6>
+              <input type="file" name="pic" accept="image/*">
+              <input type="submit" name="newevent" class="btn btn-primary">
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--End row -->
+
+    <div class="row">
+      <!-- Card for control members -->
+      <div class="col card-padding-2">
+        <div class="card">
+          <div class="card-header">
+            Control Members
+          </div>
+          <div class="card-body">
+            <ul class="list-group">
+              <button type="button" class="list-group-item list-group-item-action">Member</button>
+              <button type="button" class="list-group-item list-group-item-action">Member</button>
+              <button type="button" class="list-group-item list-group-item-action">Member</button>
+              <button type="button" class="list-group-item list-group-item-action">Member</button>
+              <button type="button" class="list-group-item list-group-item-action">Member</button>
+              <button type="button" class="list-group-item list-group-item-action">Member</button>
+              <button type="button" class="list-group-item list-group-item-action">Member</button>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div> <!-- End row -->
+
+
+
   </div>
+
+
 </body>
 
 </html>
