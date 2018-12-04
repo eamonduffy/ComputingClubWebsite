@@ -1,10 +1,11 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr" ng-app="EventsApp">
+<html lang="en" dir="ltr">
 
 <head>
   <meta charset="utf-8">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
   <link rel="stylesheet" href="../css/EventsPage.css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
@@ -90,22 +91,22 @@
   </div> <!-- End Login Modal -->
 
   <!-- Cards for Events -->
-  <div class="container" ng-controller="EventController">
+  <div class="container card-padding">
     <div class="row">
       <div class="col">
-        <div class="card text-center" style="width: 288px;" ng-repeat="card in event.events">
+        <div class="card text-center" style="width: 288px;">
           <div class="card-body">
-            <h5 class="card-title">{{card.name}}</h5>
-            <p class="card-text">{{card.description}}</p>
-            <p class="card-text"><small class="text-muted">{{card.time}}</small></p>
+            <h5 class="card-title">Hackathon</h5>
+            <p class="card-text">Day of Programming</p>
+            <p class="card-text"><small class="text-muted">Last updated now</small></p>
             <a href="#" class="btn btn-primary">View Event</a>
           </div>
         </div>
 
         <div class="card text-center" style="width: 288px;">
           <div class="card-body">
-            <h5 class="card-title">Event 2</h5>
-            <p class="card-text">Description of Event</p>
+            <h5 class="card-title">Trip to Google</h5>
+            <p class="card-text">Club trip to Google HQ</p>
             <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
             <a href="#" class="btn btn-primary">View Event</a>
           </div>
@@ -113,8 +114,8 @@
 
         <div class="card text-center" style="width: 288px;">
           <div class="card-body">
-            <h5 class="card-title">Event 3</h5>
-            <p class="card-text">Description of Event</p>
+            <h5 class="card-title">Graduate School Talk</h5>
+            <p class="card-text">Lecture based talk with Graduate School Visiters</p>
             <p class="card-text"><small class="text-muted">Last updated 2 days ago</small></p>
             <a href="#" class="btn btn-primary">View Event</a>
           </div>
@@ -126,16 +127,36 @@
       <div class="col">
         <div class="event-overview">
           <center>
-            <h3>{{event.name}}</h3>
-            <p>{{event.description}}</p>
-            <h6>{{event.location}}</h6>
-            <footer>{{event.time}}</footer>
-            {{event.image}}
+            <h3>Hackathon</h3>
+            <p>Day of programming where teams of students come together to compete amongst each other by creating a project based on given topic.</p>
+            <h6>CCE-030</h6>
+            <footer>10am - 6pm</footer>
+            <br>
+            <img src="../images/events_page/hackathon.jpg">
           </center>
         </div>
       </div>
     </div>
   </div>
+
+  <!-- Footer -->
+  <footer style="background-color: rgb(20, 59, 107); color: white;">
+    <div class="row">
+      <div class="col-md-4">
+      </div>
+      <div class="col-md-4">
+        <h6 class="display-6" style="text-align: center; font-size: 16px;">Site Powered by Crescent Cool Cats</h6>
+      </div>
+      <div class="col-md-4">
+        <label style="text-align: center;">Contact us:</label>
+        <ul style="list-style: none; cursor: pointer; display: inline !important;">
+          <li> <a style="text-decoration: none;"><i class="fab fa-facebook right"></i> Facebook</a></li>
+          <li> <a style="text-decoration: none;"><i class="fas fa-address-book right"></i> Address</a></li>
+          <li> <a style="text-decoration: none;"><i class="fas fa-phone-square right"></i> Phone number</a></li>
+        </ul>
+      </div>
+    </div>
+  </footer>
 
 
 </body>
