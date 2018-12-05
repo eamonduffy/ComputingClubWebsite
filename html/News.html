@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
 <style>
-html,
+  html,
 body {
   height: 100%;
   margin: 0
@@ -43,17 +43,18 @@ body {
   border: 1px solid rgb(221, 221, 221);
 }
 </style>
+
 <head>
-    <meta charset="utf-8">
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
-    <link rel="stylesheet" href="../css/News.css">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-    <link rel="stylesheet" href="../css/CurrentMembers.css">
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
-    <title>Computing Club</title>
+  <meta charset="utf-8">
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+  <link rel="stylesheet" href="../css/News.css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+  <link rel="stylesheet" href="../css/CurrentMembers.css">
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+  <title>Computing Club</title>
 </head>
 
 <body ng-app="MainApp">
@@ -91,40 +92,38 @@ body {
     </nav>
   </div>
   <div class="box" style="background-image: url('../images/wallpaper_2.jpg')" ng-controller="NewsController">
-      <div class="container">
-        <div class="card col-md-4 hover-news" style=" display: inline-flex !important;" ng-repeat="news in news | orderBy: 'timestamp'">
-            <img height="250px" width="100%;" class="card-img-top" src="{{news.img}}" alt="Card image cap">
-            <div class="card-body">
-              <div class="form-border"></div>
-              <h5 class="card-title">{{news.title}}</h5>
-              <div class="form-border"></div>
-              <p class="card-text">{{news.info}}</p>
-              <button class="btn btn-primary" href="{{news.link}}">Learn More</button>
-              <p class="card-text"><small class="text-muted">Last updated {{news.timestamp}}</small></p>
-            </div>
+    <div class="container">
+      <div class="card col-md-4 hover-news" style=" display: inline-flex !important;" ng-repeat="news in news | orderBy: 'timestamp'">
+        <img height="250px" width="100%;" class="card-img-top" src="{{news.img}}" alt="Card image cap">
+        <div class="card-body">
+          <div class="form-border"></div>
+          <h5 class="card-title">{{news.title}}</h5>
+          <div class="form-border"></div>
+          <p class="card-text">{{news.info}}</p>
+          <button class="btn btn-primary" href="{{news.link}}">Learn More</button>
+          <p class="card-text"><small class="text-muted">Last updated {{news.timestamp}}</small></p>
         </div>
       </div>
     </div>
-    <!-- <div id="footer"></div> -->
-    <footer style="background-color: rgb(20, 59, 107); color: white;">
-        <div class="row">
-         <div class="col-md-4">
-         </div>
-         <div class="col-md-4">        
-           <h6 class="display-6" style="text-align: center; font-size: 16px;">Site Powered by Crescent Cool Cats</h6>
-         </div>
-         <div class="col-md-4">        
-           <label style="text-align: center;">Contact us:</label>
-           <ul style="list-style: none; cursor: pointer; display: inline !important;">
-             <li> <a style="text-decoration: none;"><i class="fab fa-facebook right"></i> Facebook</a></li>
-             <li> <a style="text-decoration: none;"><i class="fas fa-address-book right"></i> Address</a></li>
-             <li> <a style="text-decoration: none;"><i class="fas fa-phone-square right"></i> Phone number</a></li>
-           </ul>
-         </div>
-       </div>
-     </footer>
-     <script>
-        var MainApp = angular.module('MainApp', []);
+  </div>
+  <!-- <div id="footer"></div> -->
+  <!-- Footer -->
+  <footer style="background-color: rgb(20, 59, 107); color: white;">
+    <center>
+      <div>
+        <h6 class="display-6" style="text-align: center; font-size: 16px;">Site Powered by Crescent Cool Cats</h6>
+      </div>
+      <div>
+        <label style="text-align: center;">Contact us:</label>
+        <br>
+        <a style="text-decoration: none;"><i class="fab fa-facebook right"></i> Facebook</a>
+        <a style="text-decoration: none;"><i class="fas fa-address-book right"></i> Address</a>
+        <a style="text-decoration: none;"><i class="fas fa-phone-square right"></i> Phone number</a>
+      </div>
+    </center>
+  </footer>
+  <script>
+    var MainApp = angular.module('MainApp', []);
         MainApp.controller('NewsController', ['$scope', function($scope) {
           $scope.news = [
             {"title": "News 1", "info":"information about news here :)", "link":"testing.com", "img":"../images/news/news_1.jpg", "timestamp":"10/1/2018"},

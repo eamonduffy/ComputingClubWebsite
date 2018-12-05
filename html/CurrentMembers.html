@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
 <style>
-html,
+  html,
 body {
   height: 100%;
   margin: 0
@@ -43,6 +43,7 @@ body {
   border: 1px solid rgb(221, 221, 221);
 }
 </style>
+
 <head>
   <meta charset="utf-8">
   <link rel="stylesheet" href="../css/News.css">
@@ -90,60 +91,57 @@ body {
       </div>
     </nav>
   </div>
-  
+
   <div class="box" style="background-image: url('../images/wallpaper_2.jpg')">
     <div class="container" ng-controller="MembersController" style="background-color: white;">
       <h3>Current Members</h3>
       <h6>member count: {{memberCount}}</h6>
       <div>
-          <ul class="nav nav-pills nav-fill">
-              <li class="nav-item">
-                <a ng-click="selectClass(1)" ng-class="{active: classSelected == 1}" class="nav-link active" href="#">Freshmen</a>
-              </li>
-              <li class="nav-item">
-                <a ng-click="selectClass(2)" ng-class="{active: classSelected == 2}" class="nav-link" href="#">Sophomore</a>
-              </li>
-              <li class="nav-item">
-                <a ng-click="selectClass(3)" ng-class="{active: classSelected == 3}" class="nav-link" href="#">Junior</a>
-              </li>
-              <li class="nav-item">
-                <a ng-click="selectClass(4)" ng-class="{active: classSelected == 4}" class="nav-link" href="#">Senior</a>
-              </li>
-            </ul>
+        <ul class="nav nav-pills nav-fill">
+          <li class="nav-item">
+            <a ng-click="selectClass(1)" ng-class="{active: classSelected == 1}" class="nav-link active" href="#">Freshmen</a>
+          </li>
+          <li class="nav-item">
+            <a ng-click="selectClass(2)" ng-class="{active: classSelected == 2}" class="nav-link" href="#">Sophomore</a>
+          </li>
+          <li class="nav-item">
+            <a ng-click="selectClass(3)" ng-class="{active: classSelected == 3}" class="nav-link" href="#">Junior</a>
+          </li>
+          <li class="nav-item">
+            <a ng-click="selectClass(4)" ng-class="{active: classSelected == 4}" class="nav-link" href="#">Senior</a>
+          </li>
+        </ul>
       </div>
       <div class="card col-md-4 hover-student" style=" display: inline-flex !important;" ng-repeat="student in displayedArr | orderBy: 'yog'">
-          <img height="250px" width="100%;" class="card-img-top" src="{{student.img}}" alt="Card image cap">
-          <div class="card-body">
-            <div class="form-border"></div>
-            <h5 class="card-title">{{student.name}}</h5>
-            <div class="form-border"></div>
-            <p class="card-text"> Graduation Year: {{student.yog}}</p>
-            <p class="card-text"><small class="text-muted">Member for {{student.yic}} years</small></p>
-          </div>
+        <img height="250px" width="100%;" class="card-img-top" src="{{student.img}}" alt="Card image cap">
+        <div class="card-body">
+          <div class="form-border"></div>
+          <h5 class="card-title">{{student.name}}</h5>
+          <div class="form-border"></div>
+          <p class="card-text"> Graduation Year: {{student.yog}}</p>
+          <p class="card-text"><small class="text-muted">Member for {{student.yic}} years</small></p>
+        </div>
       </div>
     </div>
 
-    </div>
-    <footer style="background-color: rgb(20, 59, 107); color: white;">
-      <div class="row">
-       <div class="col-md-4">        
-   
-       </div>
-       <div class="col-md-4">        
-         <h6 class="display-6" style="text-align: center; font-size: 16px;">Site Powered by Crescent Cool Cats</h6>
-       </div>
-       <div class="col-md-4">        
-         <label style="text-align: center;">Contact us:</label>
-         <ul style="list-style: none; cursor: pointer; display: inline !important;">
-           <li> <a style="text-decoration: none;"><i class="fab fa-facebook right"></i> Facebook</a></li>
-           <li> <a style="text-decoration: none;"><i class="fas fa-address-book right"></i> Address</a></li>
-           <li> <a style="text-decoration: none;"><i class="fas fa-phone-square right"></i> Phone number</a></li>
-         </ul>
-       </div>
-     </div>
-   </footer>
-     <script>
-        var MainApp = angular.module('MainApp', []);
+  </div>
+  <!-- Footer -->
+  <footer style="background-color: rgb(20, 59, 107); color: white;">
+    <center>
+      <div>
+        <h6 class="display-6" style="text-align: center; font-size: 16px;">Site Powered by Crescent Cool Cats</h6>
+      </div>
+      <div>
+        <label style="text-align: center;">Contact us:</label>
+        <br>
+        <a style="text-decoration: none;"><i class="fab fa-facebook right"></i> Facebook</a>
+        <a style="text-decoration: none;"><i class="fas fa-address-book right"></i> Address</a>
+        <a style="text-decoration: none;"><i class="fas fa-phone-square right"></i> Phone number</a>
+      </div>
+    </center>
+  </footer>
+  <script>
+    var MainApp = angular.module('MainApp', []);
         MainApp.controller('MembersController', ['$scope', function($scope) {
           $scope.memberCount = 12;
           $scope.freshmen = [

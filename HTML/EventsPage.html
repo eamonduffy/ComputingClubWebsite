@@ -14,7 +14,7 @@
   <title>Computing Club</title>
 </head>
 
-<body>
+<body ng-app="EventsApp">
   <!-- Banner at top of page -->
   <div class="banner">
     <img src="../images/ComputingClubBanner.jpg" alt="Banner">
@@ -90,72 +90,95 @@
     </div>
   </div> <!-- End Login Modal -->
 
-  <!-- Cards for Events -->
-  <div class="container card-padding">
-    <div class="row">
-      <div class="col">
-        <div class="card text-center" style="width: 288px;">
-          <div class="card-body">
-            <h5 class="card-title">Hackathon</h5>
-            <p class="card-text">Day of Programming</p>
-            <p class="card-text"><small class="text-muted">Last updated now</small></p>
-            <a href="#" class="btn btn-primary">View Event</a>
+  <div style="background-image: url('../images/wallpaper_2.jpg')">
+    <!-- Cards for Events -->
+    <div class="container card-padding" ng-controller="EventController">
+      <div class="row">
+        <div class="col">
+          <div class="card text-center" style="width: 300px;" ng-repeat="event in events">
+            <div class="card-body">
+              <h5 class="card-title">{{event.name}}</h5>
+              <p class="card-text">{{event.description_sm}}</p>
+              <p class="card-text"><small class="text-muted">{{event.updated}}</small></p>
+              <a href="#" class="btn btn-primary" ng-click="viewEvent()">View Event</a>
+            </div>
           </div>
-        </div>
+        </div> <!-- End of col -->
 
-        <div class="card text-center" style="width: 288px;">
-          <div class="card-body">
-            <h5 class="card-title">Trip to Google</h5>
-            <p class="card-text">Club trip to Google HQ</p>
-            <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-            <a href="#" class="btn btn-primary">View Event</a>
+        <!-- Event Overview section -->
+        <div class="col">
+          <div class="card text-center" id="eventOverview" style="width: 750px; height:612px">
+            <div class="card-body">
+              <h3></h3>
+              <p></p>
+              <h6></h6>
+              <footer></footer>
+              <br>
+              <img src="">
+            </div>
           </div>
-        </div>
+        </div> <!-- End col -->
 
-        <div class="card text-center" style="width: 288px;">
-          <div class="card-body">
-            <h5 class="card-title">Graduate School Talk</h5>
-            <p class="card-text">Lecture based talk with Graduate School Visiters</p>
-            <p class="card-text"><small class="text-muted">Last updated 2 days ago</small></p>
-            <a href="#" class="btn btn-primary">View Event</a>
-          </div>
-        </div>
+      </div> <!-- End row -->
+    </div> <!--End container -->
+  </div> <!-- End background style -->
 
-      </div> <!-- End of col -->
-
-      <!-- Event Overview section -->
-      <div class="col">
-        <div class="event-overview">
-          <center>
-            <h3>Hackathon</h3>
-            <p>Day of programming where teams of students come together to compete amongst each other by creating a project based on given topic.</p>
-            <h6>CCE-030</h6>
-            <footer>10am - 6pm</footer>
-            <br>
-            <img src="../images/events_page/hackathon.jpg">
-          </center>
-        </div>
-      </div>
-    </div>
-  </div>
+  <script>
+    // create angular app
+    var app = angular.module("EventsApp", []);
+    // view event overview controller
+    app.controller("EventController", ['$scope', function($scope) {
+      $scope.events = [{
+          "name": 'Hackathon',
+          "description_sm": 'Day of Programming',
+          "description_lg": 'Day of programming where teams of students come together to compete amongst each other by creating a project based on given topic.',
+          "updated": 'Last updated now',
+          "date": "10/6/18",
+          "time": "10am - 6pm",
+          "location": 'CCE-030',
+          "image":"../images/events_page/hackathon.jpg"
+        },
+        {
+          "name": 'Trip to Google',
+          "description_sm": 'Club trip to Google HQ',
+          "description_lg": 'The Computing Club will be taking a trip to NYC to visit Google.',
+          "updated": 'Last updated 7 hours ago',
+          "date": "11/14/18",
+          "time": "8am - 7pm",
+          "location": 'New York, NY',
+          "image":"../images/events_page/google_trip.jpg"
+        },
+        {
+          "name": 'Graduate School Talk',
+          "description_sm": 'Lecture based talk with Graduate School Visiters',
+          "description_lg": 'Visitors from Graduate Programs will be coming to campus to discuss oppurtunities to undergrads.',
+          "updated": 'Last updated 2 weeks ago',
+          "date": "11/26/18",
+          "time": "3pm - 5pm",
+          "location": 'CCE-114',
+          "image":"../images/events_page/lecture.jpg"
+        }
+      ]
+    $scope.viewEvent = function() {
+      $scope.events = 
+    }
+  }]);
+  </script>
 
   <!-- Footer -->
   <footer style="background-color: rgb(20, 59, 107); color: white;">
-    <div class="row">
-      <div class="col-md-4">
-      </div>
-      <div class="col-md-4">
+    <center>
+      <div>
         <h6 class="display-6" style="text-align: center; font-size: 16px;">Site Powered by Crescent Cool Cats</h6>
       </div>
-      <div class="col-md-4">
+      <div>
         <label style="text-align: center;">Contact us:</label>
-        <ul style="list-style: none; cursor: pointer; display: inline !important;">
-          <li> <a style="text-decoration: none;"><i class="fab fa-facebook right"></i> Facebook</a></li>
-          <li> <a style="text-decoration: none;"><i class="fas fa-address-book right"></i> Address</a></li>
-          <li> <a style="text-decoration: none;"><i class="fas fa-phone-square right"></i> Phone number</a></li>
-        </ul>
+        <br>
+        <a style="text-decoration: none;"><i class="fab fa-facebook right"></i> Facebook</a>
+        <a style="text-decoration: none;"><i class="fas fa-address-book right"></i> Address</a>
+        <a style="text-decoration: none;"><i class="fas fa-phone-square right"></i> Phone number</a>
       </div>
-    </div>
+    </center>
   </footer>
 
 
