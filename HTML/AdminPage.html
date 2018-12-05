@@ -6,6 +6,11 @@
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
   <link rel="stylesheet" href="../css/AdminPage.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+
 
   <title>Computing Club</title>
 </head>
@@ -106,19 +111,38 @@
             </div>
             <div class="card-body">
               <ul class="list-group">
-                <button type="button" class="list-group-item list-group-item-action">Ryan Hanlon</button>
-                <button type="button" class="list-group-item list-group-item-action">Eamon Duffy</button>
-                <button type="button" class="list-group-item list-group-item-action">Kyle Gorman</button>
-                <button type="button" class="list-group-item list-group-item-action">Will Eccles</button>
-                <button type="button" class="list-group-item list-group-item-action">Matt Chieco</button>
-                <button type="button" class="list-group-item list-group-item-action">Joe Passanante</button>
-                <button type="button" class="list-group-item list-group-item-action">Prof. Duncan</button>
+                <button type="button" class="list-group-item list-group-item-action" data-toggle="modal" data-target="#memberModal">Ryan Hanlon</button>
+                <button type="button" class="list-group-item list-group-item-action" data-toggle="modal" data-target="#memberModal">Eamon Duffy</button>
+                <button type="button" class="list-group-item list-group-item-action" data-toggle="modal" data-target="#memberModal">Kyle Gorman</button>
+                <button type="button" class="list-group-item list-group-item-action" data-toggle="modal" data-target="#memberModal">Will Eccles</button>
+                <button type="button" class="list-group-item list-group-item-action" data-toggle="modal" data-target="#memberModal">Matt Chieco</button>
+                <button type="button" class="list-group-item list-group-item-action" data-toggle="modal" data-target="#memberModal">Joe Passanante</button>
+                <button type="button" class="list-group-item list-group-item-action" data-toggle="modal" data-target="#memberModal">Prof. Duncan</button>
               </ul>
             </div>
           </div>
         </div>
       </div> <!-- End row -->
     </div> <!-- End container for Cards -->
+  </div>
+
+  <div class="modal fade" id="memberModal" role="dialog">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header" style="background-color: #F5F5F5;">
+          <button type="button" id="close" class="close" data-dismiss="modal">&times;</button>
+          <div class="container-fluid text-center">
+            <h3 class="modal-title">Member Control</h3>
+          </div>
+        </div>
+        <div class="modal-body">
+          <div class="container-fluid text-center">
+            <input type="button" class="btn btn-primary" name="editName" value="Edit Name">
+            <input type="button" class="btn btn-primary" name="delete" value="Delete">
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 
   <!-- Footer -->
