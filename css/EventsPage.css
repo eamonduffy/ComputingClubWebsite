@@ -10,3 +10,44 @@
   padding-bottom: 15px;
   padding-top: 15px;
 }
+html,
+body {
+  height: 100%;
+  margin: 0
+}
+
+.box {
+  display: flex;
+  flex-flow: column;
+  height: 100%;
+}
+
+.box .row {
+  border: 1px dotted grey;
+}
+
+.box .row.header {
+  flex: 0 1 auto;
+  /* The above is shorthand for:
+  flex-grow: 0,
+  flex-shrink: 1,
+  flex-basis: auto
+  */
+}
+
+.hover-student:hover{
+  background-color: #0C2340;
+  color: white;
+}
+
+.box .row.content {
+  flex: 1 1 auto;
+}
+
+.box .row.footer {
+  flex: 0 1 80px;
+}
+
+.form-border{
+  border: 1px solid rgb(221, 221, 221);
+}
