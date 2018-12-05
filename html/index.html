@@ -170,6 +170,13 @@
               <center>
                 <h3>{{section.header}}</h3>
                 <p>{{section.content}}</p>
+                <div ng-if="classSelected == 2">
+                  <ul>
+                    <li>{{section.president}}</li>
+                    <li>{{section.vice}}</li>
+                    <li>{{section.other}}</li>
+                  </ul>
+                </div>
               </center>
             </div>
           </div>

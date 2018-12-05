@@ -4,7 +4,7 @@ indexApp.controller('indexController', ['$scope', function($scope) {
   {"header":"General Info", "content":"The Quinnipiac Computing Club hosts various events to promote programming at Quinnipiac. These range from social events to programming competitons."},
   ];
   $scope.board = [
-  {"header":"E-board", "content":"The current E-board members are, Steve Smith; Danny Devito and Frank Reyonlds"},
+  {"header":"E-board", "content":"The current E-board members are:", "president": "Ryan Hanlon", "vice": "Kyle Gorman", "other":"Eamon Duffy"},
   ];
   $scope.meeting = [
   {"header":"Meeting Info", "content":"We meet every Tuesday in CCE030 at 9:30pm."},
@@ -174,5 +174,6 @@ $('#calendar').calendar({
         $(this).css("display", "none");
       }
     });
+document.getElementsByClassName("calendar-header panel panel-default")[0].innerHTML = '<table><th class="prev"><span class="glyphicon glyphicon-chevron-left"></span></th><th class="year-title year-neighbor2 hidden-sm hidden-xs">Oct</th><th class="year-title year-neighbor hidden-xs">Nov</th><th class="year-title">Dec</th><th class="year-title year-neighbor hidden-xs">Jan</th><th class="year-title year-neighbor2 hidden-sm hidden-xs">Feb</th><th class="next"><span class="glyphicon glyphicon-chevron-right"></span></th></table>';
   }
 });
