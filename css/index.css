@@ -131,11 +131,12 @@
 .calendar .months-container {
   width:100%;
   display:none;
+  padding-left: 120px;
 }
 
 .calendar .month-container {
   text-align:center;
-  height:200px;
+  height:250px;
   padding-right:10px;
 }
 
