@@ -4,13 +4,13 @@ indexApp.controller('indexController', ['$scope', function($scope) {
   {"header":"General Info", "content":"The Quinnipiac Computing Club hosts various events to promote programming at Quinnipiac. These range from social events to programming competitons."},
   ];
   $scope.board = [
-  {"header":"E-board", "content":"The current E-board members are:", "president": "Ryan Hanlon", "vice": "Kyle Gorman", "other":"Eamon Duffy"},
+  {"header":"E-board", "content":"The current E-board members are:", "president": " David Lepore", "vice": " Joseph White", "other":" Megan Foster"},
   ];
   $scope.meeting = [
-  {"header":"Meeting Info", "content":"We meet every Tuesday in CCE030 at 9:30pm."},
+  {"header":"Meeting Info", "content":"We meet every Tuesday in CCE032 at 6:30pm."},
   ];
   $scope.contacts = [
-  {"header":"Contacts", "content":"We can be reached on Tuesday in CCE030 at 9:30pm or by email at totallyarealemail@quinnipiac.edu"},
+  {"header":"Contacts", "content":"We can be reached on Tuesday in CCE032 at 6:30pm"},
   ];
   $scope.classSelected = 1;
   $scope.displayedArr = $scope.general;
